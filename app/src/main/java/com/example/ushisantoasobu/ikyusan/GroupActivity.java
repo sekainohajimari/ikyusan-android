@@ -1,35 +1,53 @@
 package com.example.ushisantoasobu.ikyusan;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import retrofit.RestAdapter;
 
+public class GroupActivity extends Activity {
 
-public class MainActivity extends Activity {
-
-    @InjectView(R.id.testButton)
-    Button mButton;
-
+    @InjectView(R.id.listView)
+    ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_group);
+
         ButterKnife.inject(this);
+
+        //
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+
+        adapter.add("a");
+        adapter.add("b");
+        adapter.add("c");
+
+        mListView.setAdapter(adapter);
+
+        //api
+//        RestAdapter restAdapter = new RestAdapter.Builder().build();
+//        IkyusanService service = restAdapter.create(IkyusanService.class);
+//        List<GroupData> groupDatas = service.listGroup();
+//        Toast.makeText(this, "test", Toast.LENGTH_LONG).show();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.group, menu);
         return true;
     }
 
@@ -44,12 +62,4 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    @OnClick(R.id.testButton)
-    void onClickTestButton() {
-//        Toast.makeText(this, "best player", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, GroupActivity.class);
-        startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
-    }
-
 }
