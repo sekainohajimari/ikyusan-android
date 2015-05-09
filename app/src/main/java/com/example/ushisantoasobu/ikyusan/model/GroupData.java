@@ -1,4 +1,4 @@
-package com.example.ushisantoasobu.ikyusan;
+package com.example.ushisantoasobu.ikyusan.model;
 
 /**
  * Created by ushisantoasobu on 15/04/26.

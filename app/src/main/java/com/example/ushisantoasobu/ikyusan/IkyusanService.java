@@ -1,9 +1,10 @@
 package com.example.ushisantoasobu.ikyusan;
 
+import com.example.ushisantoasobu.ikyusan.model.GroupData;
+
 import java.util.List;
 
 import retrofit.http.GET;
-import retrofit.http.Path;
 
 /**
  * Created by ushisantoasobu on 15/04/26.

@@ -1,4 +1,4 @@
-package com.example.ushisantoasobu.ikyusan;
+package com.example.ushisantoasobu.ikyusan.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.ushisantoasobu.ikyusan.R;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -48,7 +49,7 @@ public class MainActivity extends Activity {
     @OnClick(R.id.testButton)
     void onClickTestButton() {
 //        Toast.makeText(this, "best player", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, GroupActivity.class);
+        Intent intent = new Intent(this, GroupListActivity.class);
         startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
     }
 
