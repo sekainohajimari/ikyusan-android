@@ -33,6 +33,10 @@
             android:name=".activity.LikeListActivity"
             android:label="@string/title_activity_like_list" >
         </activity>
+        <activity
+            android:name=".activity.GroupCreateActivity"
+            android:label="@string/title_activity_group_create" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -8,5 +8,6 @@
     <string name="title_activity_topic_list">TopicListActivity</string>
     <string name="title_activity_idea_list">IdeaListActivity</string>
     <string name="title_activity_like_list">LikeListActivity</string>
+    <string name="title_activity_group_create">GroupCreateActivity</string>
 
 </resources>

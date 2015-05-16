@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.ushisantoasobu.ikyusan.activity.GroupListActivity" >
+    <item android:id="@+id/action_create"
+        android:title="新規作成"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_notification"
+        android:title="お知らせ"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>
