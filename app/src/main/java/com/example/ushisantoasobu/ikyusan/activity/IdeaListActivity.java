@@ -1,7 +1,9 @@
 package com.example.ushisantoasobu.ikyusan.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -52,7 +54,9 @@ public class IdeaListActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_create) {
+            Intent intent = new Intent(this, IdeaCreateActivity.class);
+            startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
             return true;
         }
         return super.onOptionsItemSelected(item);

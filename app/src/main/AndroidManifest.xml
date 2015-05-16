@@ -37,6 +37,14 @@
             android:name=".activity.GroupCreateActivity"
             android:label="@string/title_activity_group_create" >
         </activity>
+        <activity
+            android:name=".activity.IdeaCreateActivity"
+            android:label="@string/title_activity_idea_create" >
+        </activity>
+        <activity
+            android:name=".activity.TopicCreateActivity"
+            android:label="@string/title_activity_topic_create" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
