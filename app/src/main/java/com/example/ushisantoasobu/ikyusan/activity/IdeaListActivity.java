@@ -10,7 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.example.ushisantoasobu.ikyusan.R;
+import com.example.ushisantoasobu.ikyusan.adapter.IdeaAdapter;
+import com.example.ushisantoasobu.ikyusan.model.IdeaData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -30,14 +33,24 @@ public class IdeaListActivity extends Activity {
 
         ButterKnife.inject(this);
 
-        //
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        List<IdeaData> ideas = new ArrayList<IdeaData>();
 
-        adapter.add("タコベル食レポ");
-        adapter.add("須川さんに聞く、今年は何人の男と付き合うのか");
-        adapter.add("夏休みの児童向け　俺が考えた怖い話スペシャルーーー　脱稲川淳二　いけいけGOGO7188 メリーゴーランド");
+        IdeaData item1 = new IdeaData();
+        item1.name = "aaa";
 
-        mListView.setAdapter(adapter);
+        IdeaData item2 = new IdeaData();
+        item2.name = "bbb";
+
+        IdeaData item3 = new IdeaData();
+        item3.name = "ccc";
+
+        ideas.add(item1);
+        ideas.add(item2);
+        ideas.add(item3);
+
+        IdeaAdapter ideaAdapter = new IdeaAdapter(this, 0, ideas);
+
+        mListView.setAdapter(ideaAdapter);
     }
 
 
