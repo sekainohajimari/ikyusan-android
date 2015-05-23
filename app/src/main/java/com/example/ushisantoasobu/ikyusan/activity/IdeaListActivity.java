@@ -1,14 +1,19 @@
 package com.example.ushisantoasobu.ikyusan.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.example.ushisantoasobu.ikyusan.R;
 import com.example.ushisantoasobu.ikyusan.adapter.IdeaAdapter;
 import com.example.ushisantoasobu.ikyusan.model.IdeaData;
@@ -50,7 +55,26 @@ public class IdeaListActivity extends Activity {
 
         IdeaAdapter ideaAdapter = new IdeaAdapter(this, 0, ideas);
 
+
         mListView.setAdapter(ideaAdapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            //リスト項目クリック時の処理
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
+                Toast.makeText(getApplicationContext(), "clicked!!", Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
+        mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                showAlertDialog();
+                return true;
+            }
+        });
     }
 
 
@@ -73,5 +97,32 @@ public class IdeaListActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("このネタを...?");
+//        builder.setMessage("message");
+        builder.setNeutralButton("編集する", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //
+            }
+        });
+        builder.setNegativeButton("削除する", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //
+            }
+        });
+//        builder.setNeutralButton("キャンセル", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                //
+//            }
+//        });
+        builder.setCancelable(true);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
