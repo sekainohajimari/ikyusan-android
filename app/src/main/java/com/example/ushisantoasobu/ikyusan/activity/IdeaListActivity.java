@@ -41,13 +41,13 @@ public class IdeaListActivity extends Activity {
         List<IdeaData> ideas = new ArrayList<IdeaData>();
 
         IdeaData item1 = new IdeaData();
-        item1.name = "aaa";
+        item1.setContent("aaaa");
 
         IdeaData item2 = new IdeaData();
-        item2.name = "bbb";
+        item2.setContent("bbbbbbbb");
 
         IdeaData item3 = new IdeaData();
-        item3.name = "ccc";
+        item3.setContent("ccccccccccccccccccccc");
 
         ideas.add(item1);
         ideas.add(item2);
