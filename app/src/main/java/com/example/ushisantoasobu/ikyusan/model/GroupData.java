@@ -5,19 +5,12 @@ package com.example.ushisantoasobu.ikyusan.model;
  */
 public class GroupData {
 
-/*
-#  id             :integer          not null, primary key
-#  name           :string(255)
-#  membar_max_num :integer
-#  topic_max_num  :integer
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
- */
-
     private Integer     id;
     private String      name;
     private Integer     memberMaxNum;
     private Integer     topicMaxNum;
+    private MemberData  ownGroupMember;
+    private ColorData   color;
     private String      createdAt;
     private String      updatedAt;
 
@@ -73,4 +66,19 @@ public class GroupData {
         this.updatedAt = updatedAt;
     }
 
+    public MemberData getOwnGroupMember() {
+        return ownGroupMember;
+    }
+
+    public void setOwnGroupMember(MemberData ownGroupMember) {
+        this.ownGroupMember = ownGroupMember;
+    }
+
+    public ColorData getColor() {
+        return color;
+    }
+
+    public void setColor(ColorData color) {
+        this.color = color;
+    }
 }

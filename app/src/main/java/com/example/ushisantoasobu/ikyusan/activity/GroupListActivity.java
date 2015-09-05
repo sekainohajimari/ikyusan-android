@@ -10,21 +10,28 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.ushisantoasobu.ikyusan.IkyusanService;
 import com.example.ushisantoasobu.ikyusan.R;
-
-import java.util.List;
+import com.example.ushisantoasobu.ikyusan.model.GroupData;
+import com.example.ushisantoasobu.ikyusan.model.GroupsData;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnClick;
+import retrofit.Callback;
 import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import retrofit.converter.GsonConverter;
 
 public class GroupListActivity extends Activity {
 
     @InjectView(R.id.listView)
     ListView mListView;
+
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,28 +41,41 @@ public class GroupListActivity extends Activity {
         ButterKnife.inject(this);
 
         //
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
-
-        adapter.add("sakai no hajimari");
-        adapter.add("POC");
-
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
         mListView.setAdapter(adapter);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             //リスト項目クリック時の処理
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 startTopicListActivity();
             }
 
         });
 
         //api
-//        RestAdapter restAdapter = new RestAdapter.Builder().build();
-//        IkyusanService service = restAdapter.create(IkyusanService.class);
-//        List<GroupData> groupDatas = service.listGroup();
-//        Toast.makeText(this, "test", Toast.LENGTH_LONG).show();
+        Gson gson = new GsonBuilder().create();
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint("http://ikyusan.sekahama.club")
+                .setConverter(new GsonConverter(gson))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build();
+        IkyusanService service = restAdapter.create(IkyusanService.class);
+        service.listGroup(new Callback<GroupsData>() {
+            @Override
+            public void success(GroupsData groups, Response response) {
+                for (GroupData group : groups.getGroups()) {
+                    adapter.add(group.getName());
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void failure(RetrofitError retrofitError) {
+                //
+            }
+        });
     }
 
 
@@ -75,6 +95,7 @@ public class GroupListActivity extends Activity {
         if (id == R.id.action_create) {
             Intent intent = new Intent(this, GroupCreateActivity.class);
             startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
+
             return true;
         }
         if (id == R.id.action_notification) {
