@@ -9,20 +9,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-import com.example.ushisantoasobu.ikyusan.R;
 
-import java.util.List;
+import com.example.ushisantoasobu.ikyusan.R;
+import com.example.ushisantoasobu.ikyusan.model.GroupData;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnClick;
-import retrofit.RestAdapter;
 
 public class TopicListActivity extends Activity {
 
     @InjectView(R.id.listView)
     ListView mListView;
+
+    public GroupData group;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,8 @@ public class TopicListActivity extends Activity {
         setContentView(R.layout.activity_topic_list);
 
         ButterKnife.inject(this);
+
+        group = (GroupData)getIntent().getSerializableExtra("group");
 
         //
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);

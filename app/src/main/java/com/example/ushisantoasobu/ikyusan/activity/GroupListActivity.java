@@ -18,6 +18,9 @@ import com.example.ushisantoasobu.ikyusan.model.GroupsData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import retrofit.Callback;
@@ -31,7 +34,9 @@ public class GroupListActivity extends Activity {
     @InjectView(R.id.listView)
     ListView mListView;
 
+    // TODO: refactor
     ArrayAdapter<String> adapter;
+    List<GroupData> list = new ArrayList<GroupData>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +54,7 @@ public class GroupListActivity extends Activity {
             //リスト項目クリック時の処理
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startTopicListActivity();
+                startTopicListActivity(list.get(position));
             }
 
         });
@@ -67,6 +72,7 @@ public class GroupListActivity extends Activity {
             public void success(GroupsData groups, Response response) {
                 for (GroupData group : groups.getGroups()) {
                     adapter.add(group.getName());
+                    list.add(group);
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -105,8 +111,9 @@ public class GroupListActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void startTopicListActivity() {
+    private void startTopicListActivity(GroupData group) {
         Intent intent = new Intent(this, TopicListActivity.class);
+        intent.putExtra("group", group);
         startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
     }
 }

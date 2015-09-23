@@ -1,9 +1,11 @@
 package com.example.ushisantoasobu.ikyusan.model;
 
+import java.io.Serializable;
+
 /**
  * Created by ushisantoasobu on 15/04/26.
  */
-public class GroupData {
+public class GroupData implements Serializable {
 
     private Integer     id;
     private String      name;

@@ -9,19 +9,18 @@
     tools:context="com.example.ushisantoasobu.ikyusan.activity.GroupCreateActivity">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="input new group name"
-        android:ems="10"
+        android:hint="グループ名を入力"
         android:id="@+id/editText"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="つくる"
+        android:text="作成"
         android:id="@+id/button"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

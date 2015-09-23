@@ -6,14 +6,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.ushisantoasobu.ikyusan.IkyusanService;
 import com.example.ushisantoasobu.ikyusan.R;
+import com.example.ushisantoasobu.ikyusan.model.GroupData;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import retrofit.converter.GsonConverter;
 
 public class GroupCreateActivity extends Activity {
 
@@ -58,7 +66,25 @@ public class GroupCreateActivity extends Activity {
             return;
         }
 
-        finish();
+        Gson gson = new GsonBuilder().create();
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint("http://ikyusan.sekahama.club")
+                .setConverter(new GsonConverter(gson))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build();
+        IkyusanService service = restAdapter.create(IkyusanService.class);
+
+        service.createGroup(mEditText.getText().toString(), "0", new Callback<GroupData>() {
+            @Override
+            public void success(GroupData group, Response response) {
+                //
+            }
+
+            @Override
+            public void failure(RetrofitError retrofitError) {
+                //
+            }
+        });
     }
 
     private boolean validate() {
