@@ -11,10 +11,9 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:hint="グループ名を入力"
         android:id="@+id/editText"
-        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -24,6 +23,6 @@
         android:id="@+id/button"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="99dp" />
+        android:layout_marginTop="80dp" />
 
 </RelativeLayout>

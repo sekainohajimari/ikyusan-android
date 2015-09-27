@@ -3,9 +3,10 @@ package com.example.ushisantoasobu.ikyusan.model;
 import java.io.Serializable;
 
 /**
- * Created by ushisantoasobu on 15/05/23.
+ * Created by ushisantoasobu on 15/09/27.
  */
-public class UserData implements Serializable {
+public class InviteData implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
 }

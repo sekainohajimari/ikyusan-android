@@ -1,9 +1,13 @@
 package com.example.ushisantoasobu.ikyusan.model;
 
+import java.io.Serializable;
+
 /**
  * Created by ushisantoasobu on 15/05/23.
  */
-public class IdeaData {
+public class IdeaData implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
 /*
 #  id          :integer          not null, primary key

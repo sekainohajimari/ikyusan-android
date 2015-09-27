@@ -1,20 +1,24 @@
 package com.example.ushisantoasobu.ikyusan.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by ushisantoasobu on 15/04/26.
  */
 public class GroupData implements Serializable {
 
-    private Integer     id;
-    private String      name;
-    private Integer     memberMaxNum;
-    private Integer     topicMaxNum;
-    private MemberData  ownGroupMember;
-    private ColorData   color;
-    private String      createdAt;
-    private String      updatedAt;
+    private static final long serialVersionUID = 1L;
+
+    private Integer          id;
+    private String           name;
+    private Integer          memberMaxNum;
+    private Integer          topicMaxNum;
+    private MemberData       ownGroupMember;
+    private ColorData        color;
+    private String           createdAt;
+    private String           updatedAt;
+    private List<MemberData> groupMembers;
 
     public GroupData() {
         //
