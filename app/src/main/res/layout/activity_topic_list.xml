@@ -15,4 +15,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="お題作成"
+        android:id="@+id/createButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

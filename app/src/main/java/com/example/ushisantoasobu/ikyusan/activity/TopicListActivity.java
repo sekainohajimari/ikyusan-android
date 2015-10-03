@@ -23,6 +23,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
@@ -103,8 +104,7 @@ public class TopicListActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_create) {
-            Intent intent = new Intent(this, TopicCreateActivity.class);
-            intent.putExtra("groupId", group.getId());
+            Intent intent = new Intent(this, GroupEditActivity.class);
             startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
             return true;
         }
@@ -114,5 +114,12 @@ public class TopicListActivity extends Activity {
     private void startIdeaListActivity() {
         Intent intent = new Intent(this, IdeaListActivity.class);
         startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
+    }
+
+    @OnClick(R.id.createButton)
+    void createButtonClickd() {
+        Intent intent = new Intent(this, TopicCreateActivity.class);
+        intent.putExtra("groupId", group.getId());
+        startActivityForResult(intent, 0);
     }
 }

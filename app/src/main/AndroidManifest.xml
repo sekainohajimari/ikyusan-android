@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ushisantoasobu.ikyusan" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -45,9 +48,18 @@
             android:name=".activity.TopicCreateActivity"
             android:label="@string/title_activity_topic_create" >
         </activity>
+        <activity
+            android:name=".activity.AccountActivity"
+            android:label="@string/title_activity_account" >
+        </activity>
+        <activity
+            android:name=".activity.NotificationListActivity"
+            android:label="@string/title_activity_notification_list" >
+        </activity>
+        <activity
+            android:name=".activity.GroupEditActivity"
+            android:label="@string/title_activity_group_edit" >
+        </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

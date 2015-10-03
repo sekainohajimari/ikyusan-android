@@ -4,12 +4,15 @@
     <string name="app_name">Ikyusan</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_group">GroupActivity</string>
-    <string name="title_activity_topic_list">TopicListActivity</string>
-    <string name="title_activity_idea_list">IdeaListActivity</string>
-    <string name="title_activity_like_list">LikeListActivity</string>
-    <string name="title_activity_group_create">GroupCreateActivity</string>
-    <string name="title_activity_idea_create">IdeaCreateActivity</string>
-    <string name="title_activity_topic_create">TopicCreateActivity</string>
+    <string name="title_activity_group">awe</string>
+    <string name="title_activity_topic_list">トピック一覧</string>
+    <string name="title_activity_idea_list">アイデア一覧</string>
+    <string name="title_activity_like_list">スキした人たち</string>
+    <string name="title_activity_group_create">グループ作成</string>
+    <string name="title_activity_idea_create">アイデアを投稿する</string>
+    <string name="title_activity_topic_create">お題作成</string>
+    <string name="title_activity_account">アカウント設定</string>
+    <string name="title_activity_notification_list">お知らせ一覧</string>
+    <string name="title_activity_group_edit">グループ編集</string>
 
 </resources>
