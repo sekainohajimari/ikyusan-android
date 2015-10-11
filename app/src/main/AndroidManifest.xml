@@ -60,6 +60,10 @@
             android:name=".activity.GroupEditActivity"
             android:label="@string/title_activity_group_edit" >
         </activity>
+        <activity
+            android:name=".activity.TwitterConnectActivity"
+            android:label="@string/title_activity_twitter_connect" >
+        </activity>
     </application>
 
 </manifest>

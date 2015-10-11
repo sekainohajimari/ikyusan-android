@@ -105,7 +105,7 @@ public class GroupListActivity extends Activity {
             return true;
         }
         if (id == R.id.action_notification) {
-            Intent intent = new Intent(this, NotificationListActivity.class);
+            Intent intent = new Intent(this, TwitterConnectActivity.class);
             startActivityForResult(intent, 0);
             return true;
         }

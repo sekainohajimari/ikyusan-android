@@ -19,4 +19,14 @@ public class NotificationsData implements Serializable {
     }
 
     private List<NotificationData> notifications;
+
+    public NotificationMetaData getMeta() {
+        return meta;
+    }
+
+    public void setMeta(NotificationMetaData meta) {
+        this.meta = meta;
+    }
+
+    private NotificationMetaData meta;
 }

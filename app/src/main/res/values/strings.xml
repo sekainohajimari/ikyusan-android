@@ -14,5 +14,6 @@
     <string name="title_activity_account">アカウント設定</string>
     <string name="title_activity_notification_list">お知らせ一覧</string>
     <string name="title_activity_group_edit">グループ編集</string>
+    <string name="title_activity_twitter_connect">TwitterConnectActivity</string>
 
 </resources>

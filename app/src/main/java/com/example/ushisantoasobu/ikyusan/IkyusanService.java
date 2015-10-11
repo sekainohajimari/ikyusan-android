@@ -21,6 +21,7 @@ import retrofit.http.Headers;
 import retrofit.http.PATCH;
 import retrofit.http.POST;
 import retrofit.http.Path;
+import retrofit.http.Query;
 
 /**
  * Created by ushisantoasobu on 15/04/26.
@@ -109,7 +110,7 @@ public interface IkyusanService {
 
     @Headers("Authorization: Token token=7e38c396497b3ab19d57a1dc1df360170cd54a4df1d18c51ba74da0e4f488e1e64088c5bde350d65")
     @GET("/api/v1/notifications")
-    void listNotification(Callback<NotificationsData> callback);
+    void listNotification(@Query("page") String page, Callback<NotificationsData> callback);
 
     @Headers("Authorization: Token token=7e38c396497b3ab19d57a1dc1df360170cd54a4df1d18c51ba74da0e4f488e1e64088c5bde350d65")
     @GET("/api/v1/notifications/unopened_count")
