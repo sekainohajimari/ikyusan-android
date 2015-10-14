@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.ushisantoasobu.ikyusan.IkyusanService;
@@ -12,6 +13,7 @@ import com.example.ushisantoasobu.ikyusan.R;
 import com.example.ushisantoasobu.ikyusan.model.InfoProfileData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -23,6 +25,9 @@ import retrofit.client.Response;
 import retrofit.converter.GsonConverter;
 
 public class AccountActivity extends Activity {
+
+    @InjectView(R.id.avatarImageButton)
+    ImageButton mAvatarImageButton;
 
     @InjectView(R.id.idTextView)
     TextView mTextView;
@@ -48,6 +53,9 @@ public class AccountActivity extends Activity {
         service.infoProfile(new Callback<InfoProfileData>() {
             @Override
             public void success(InfoProfileData data, Response response) {
+                Picasso.with(getApplicationContext()).load(data.getProfile().getIconUrl())
+                        .resize(mAvatarImageButton.getWidth(), mAvatarImageButton.getHeight())
+                        .into(mAvatarImageButton);
                 mTextView.setText(data.getProfile().getDisplayId());
                 mEditText.setText(data.getProfile().getDisplayName());
             }

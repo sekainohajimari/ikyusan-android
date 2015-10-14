@@ -30,7 +30,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:gravity="right"
-                android:id="@+id/imageButton" />
+                android:id="@+id/avatarImageButton" />
         </LinearLayout>
 
         <View
