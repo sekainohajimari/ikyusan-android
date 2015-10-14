@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="45dip"
+    android:background="#ffffccff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip" >
+    >
+    <ImageView
+        android:layout_width="35dip"
+        android:layout_height="35dip"
+        android:layout_marginRight="5dip"
+        android:gravity="center_vertical"
+        android:src="@drawable/ic_launcher" />
+    <EditText
+        android:id="@+id/searchbar_edittext"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="3dip"
+        android:layout_weight="1"
+        android:drawableRight="@android:drawable/ic_search_category_default"
+        android:ellipsize="end"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:singleLine="true" />
+</LinearLayout>

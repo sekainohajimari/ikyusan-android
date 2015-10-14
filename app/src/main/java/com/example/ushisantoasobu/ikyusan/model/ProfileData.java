@@ -7,11 +7,21 @@ import java.io.Serializable;
  */
 public class ProfileData implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 123456;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public ProfileData() {
+        //
     }
+
+    private Integer     identifier;
+    private Integer     user_id;
+    private String      display_id;
+    private String      display_name;
+    private String      created_at;
+    private String      updated_at;
+    private String      icon_url;
+    private String      default_icon_url;
+    private Boolean     in_use_default_icon;
 
     public Integer getIdentifier() {
         return identifier;
@@ -22,76 +32,66 @@ public class ProfileData implements Serializable {
     }
 
     public Integer getUserId() {
-        return userId;
+        return user_id;
     }
 
     public void setUserId(Integer userId) {
-        this.userId = userId;
+        this.user_id = userId;
     }
 
     public String getDisplayId() {
-        return displayId;
+        return display_id;
     }
 
     public void setDisplayId(String displayId) {
-        this.displayId = displayId;
+        this.display_id = displayId;
     }
 
     public String getDisplayName() {
-        return displayName;
+        return display_name;
     }
 
     public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+        this.display_name = displayName;
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
     }
 
     public String getIconUrl() {
-        return iconUrl;
+        return icon_url;
     }
 
     public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+        this.icon_url = iconUrl;
     }
 
     public String getDefaultIconUrl() {
-        return defaultIconUrl;
+        return default_icon_url;
     }
 
     public void setDefaultIconUrl(String defaultIconUrl) {
-        this.defaultIconUrl = defaultIconUrl;
+        this.default_icon_url = defaultIconUrl;
     }
 
     public Boolean getInUseDefaultIcon() {
-        return inUseDefaultIcon;
+        return in_use_default_icon;
     }
 
     public void setInUseDefaultIcon(Boolean inUseDefaultIcon) {
-        this.inUseDefaultIcon = inUseDefaultIcon;
+        this.in_use_default_icon = inUseDefaultIcon;
     }
-
-    Integer     identifier;
-    Integer     userId;
-    String      displayId;
-    String      displayName;
-    String      createdAt;
-    String      updatedAt;
-    String      iconUrl;
-    String      defaultIconUrl;
-    Boolean     inUseDefaultIcon;
 }

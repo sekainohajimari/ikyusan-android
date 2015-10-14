@@ -4,6 +4,7 @@ import com.example.ushisantoasobu.ikyusan.model.GroupData;
 import com.example.ushisantoasobu.ikyusan.model.GroupsData;
 import com.example.ushisantoasobu.ikyusan.model.IdeaData;
 import com.example.ushisantoasobu.ikyusan.model.IdeasData;
+import com.example.ushisantoasobu.ikyusan.model.InfoProfileData;
 import com.example.ushisantoasobu.ikyusan.model.LikesData;
 import com.example.ushisantoasobu.ikyusan.model.NotificationsData;
 import com.example.ushisantoasobu.ikyusan.model.TopicData;
@@ -122,5 +123,12 @@ public interface IkyusanService {
 
     /** profiles */
 
+    @Headers("Authorization: Token token=7e38c396497b3ab19d57a1dc1df360170cd54a4df1d18c51ba74da0e4f488e1e64088c5bde350d65")
+    @GET("/api/v1/profile")
+    void infoProfile(Callback<InfoProfileData> callback);
 
+    @Headers("Authorization: Token token=7e38c396497b3ab19d57a1dc1df360170cd54a4df1d18c51ba74da0e4f488e1e64088c5bde350d65")
+    @FormUrlEncoded
+    @PATCH("/api/v1/profile")
+    void updateProfile(@Field("display_name") String displayName, @Field("apply_default_icon") String applyDefaultIcon, Callback<InfoProfileData> callback);
 }

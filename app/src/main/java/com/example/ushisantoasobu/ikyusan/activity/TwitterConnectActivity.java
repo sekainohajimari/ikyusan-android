@@ -54,9 +54,6 @@ public class TwitterConnectActivity extends Activity {
                     @Override
                     public void onReceiveValue(String s) {
 
-//                        s = s.replaceAll("<pre style=\"word-wrap: break-word; white-space: pre-wrap;\">", "");
-//                        s = s.replaceAll("</pre>", "");
-
                         // https://github.com/GoogleChrome/chromium-webview-samples/blob/b18afa96ab6215eed526c19156bf0fe6f5386ad1/jsinterface-example/app/src/main/java/jsinterfacesample/android/chrome/google/com/jsinterface_example/MainFragment.java
                         JsonReader reader = new JsonReader(new StringReader(s));
 

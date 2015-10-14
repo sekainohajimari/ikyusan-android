@@ -9,23 +9,13 @@ public class TopicData implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-/*
-#  id           :integer          not null, primary key
-#  group_id     :integer
-#  builder_id   :integer
-#  name         :string(255)
-#  idea_max_num :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
- */
-
     private Integer     id;
-    private Integer     groupId;
-    private Integer     builderId;
+    private Integer     group_id;
+    private Integer     builder_id;
     private String      name;
-    private Integer     ideaMaxNum;
-    private String      createdAt;
-    private String      updatedAt;
+    private Integer     idea_max_num;
+    private String      created_at;
+    private String      updated_at;
 
     public TopicData() {
 
@@ -40,19 +30,19 @@ public class TopicData implements Serializable {
     }
 
     public Integer getGroupId() {
-        return groupId;
+        return group_id;
     }
 
     public void setGroupId(Integer groupId) {
-        this.groupId = groupId;
+        this.group_id = groupId;
     }
 
     public Integer getBuilderId() {
-        return builderId;
+        return builder_id;
     }
 
     public void setBuilderId(Integer builderId) {
-        this.builderId = builderId;
+        this.builder_id = builderId;
     }
 
     public String getName() {
@@ -64,27 +54,27 @@ public class TopicData implements Serializable {
     }
 
     public Integer getIdeaMaxNum() {
-        return ideaMaxNum;
+        return idea_max_num;
     }
 
     public void setIdeaMaxNum(Integer ideaMaxNum) {
-        this.ideaMaxNum = ideaMaxNum;
+        this.idea_max_num = ideaMaxNum;
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
     }
 
 }

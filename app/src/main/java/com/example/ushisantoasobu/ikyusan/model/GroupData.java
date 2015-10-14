@@ -12,12 +12,12 @@ public class GroupData implements Serializable {
 
     private Integer          id;
     private String           name;
-    private Integer          memberMaxNum;
-    private Integer          topicMaxNum;
-    private MemberData       ownGroupMember;
+    private Integer          member_max_num;
+    private Integer          topic_max_num;
+    private MemberData       own_group_member;
     private ColorData        color;
-    private String           createdAt;
-    private String           updatedAt;
+    private String           created_at;
+    private String           updated_at;
     private List<MemberData> groupMembers;
 
     public GroupData() {
@@ -41,43 +41,43 @@ public class GroupData implements Serializable {
     }
 
     public Integer getMemberMaxNum() {
-        return memberMaxNum;
+        return member_max_num;
     }
 
     public void setMemberMaxNum(Integer memberMaxNum) {
-        this.memberMaxNum = memberMaxNum;
+        this.member_max_num = memberMaxNum;
     }
 
     public Integer getTopicMaxNum() {
-        return topicMaxNum;
+        return topic_max_num;
     }
 
     public void setTopicMaxNum(Integer topicMaxNum) {
-        this.topicMaxNum = topicMaxNum;
+        this.topic_max_num = topicMaxNum;
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
     }
 
     public MemberData getOwnGroupMember() {
-        return ownGroupMember;
+        return own_group_member;
     }
 
     public void setOwnGroupMember(MemberData ownGroupMember) {
-        this.ownGroupMember = ownGroupMember;
+        this.own_group_member = ownGroupMember;
     }
 
     public ColorData getColor() {

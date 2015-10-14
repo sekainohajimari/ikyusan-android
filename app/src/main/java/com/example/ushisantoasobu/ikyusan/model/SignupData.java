@@ -7,6 +7,10 @@ import java.io.Serializable;
  */
 public class SignupData implements Serializable {
 
+    Integer     identifier;
+    String      token;
+    ProfileData profile;
+
     public boolean isValidate() {
         if (identifier != null && token != null) {
             return true;
@@ -40,8 +44,4 @@ public class SignupData implements Serializable {
     public void setProfile(ProfileData profile) {
         this.profile = profile;
     }
-
-    Integer     identifier;
-    String      token;
-    ProfileData profile;
 }

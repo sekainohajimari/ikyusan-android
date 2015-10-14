@@ -8,4 +8,23 @@ import java.io.Serializable;
 public class UserData implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    private Integer id;
+    private ProfileData profile;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public ProfileData getProfile() {
+        return profile;
+    }
+
+    public void setProfile(ProfileData profile) {
+        this.profile = profile;
+    }
 }

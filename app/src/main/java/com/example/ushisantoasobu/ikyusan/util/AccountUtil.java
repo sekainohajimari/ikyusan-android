@@ -59,11 +59,11 @@ public class AccountUtil {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("display_id", profile.getDisplayId());
         editor.putString("display_name",profile.getDisplayName());
-        if (profile.getInUseDefaultIcon()) {
-            editor.putString("icon_url", profile.getDefaultIconUrl());
-        } else {
-            editor.putString("icon_url", profile.getIconUrl());
-        }
+//        if (profile.getInUseDefaultIcon()) {
+//            editor.putString("icon_url", profile.getDefaultIconUrl());
+//        } else {
+//            editor.putString("icon_url", profile.getIconUrl());
+//        }
         return editor.commit();
     }
 

@@ -10,6 +10,9 @@ public class NotificationsData implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private List<NotificationData> notifications;
+    private NotificationMetaData meta;
+
     public List<NotificationData> getNotifications() {
         return notifications;
     }
@@ -17,8 +20,6 @@ public class NotificationsData implements Serializable {
     public void setNotifications(List<NotificationData> notifications) {
         this.notifications = notifications;
     }
-
-    private List<NotificationData> notifications;
 
     public NotificationMetaData getMeta() {
         return meta;
@@ -28,5 +29,5 @@ public class NotificationsData implements Serializable {
         this.meta = meta;
     }
 
-    private NotificationMetaData meta;
+
 }

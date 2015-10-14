@@ -9,25 +9,15 @@ public class IdeaData implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-/*
-#  id          :integer          not null, primary key
-#  topic_id    :integer
-#  poster_id   :integer
-#  content     :string(255)
-#  anonymity   :integer
-#  likes_count :integer          default(0)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
- */
-
     private Integer     id;
-    private Integer     topicId;
-    private Integer     posterId;
+    private Integer     topic_id;
+    private Integer     poster_id;
     private String      content;
     private Boolean     anonymity;
-    private Integer     likesCount;
-    private String      createdAt;
-    private String      updatedAt;
+    private Integer     likes_count;
+    private String      created_at;
+    private String      updated_at;
+    private UserData    post_user;
 
     public IdeaData() {
        //
@@ -42,19 +32,19 @@ public class IdeaData implements Serializable {
     }
 
     public Integer getTopicId() {
-        return topicId;
+        return topic_id;
     }
 
     public void setTopicId(Integer topicId) {
-        this.topicId = topicId;
+        this.topic_id = topicId;
     }
 
     public Integer getPosterId() {
-        return posterId;
+        return poster_id;
     }
 
     public void setPosterId(Integer posterId) {
-        this.posterId = posterId;
+        this.poster_id = posterId;
     }
 
     public String getContent() {
@@ -74,26 +64,34 @@ public class IdeaData implements Serializable {
     }
 
     public Integer getLikesCount() {
-        return likesCount;
+        return likes_count;
     }
 
     public void setLikesCount(Integer likesCount) {
-        this.likesCount = likesCount;
+        this.likes_count = likesCount;
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
+    }
+
+    public UserData getPostUser() {
+        return post_user;
+    }
+
+    public void setPostUser(UserData postUser) {
+        this.post_user = postUser;
     }
 }

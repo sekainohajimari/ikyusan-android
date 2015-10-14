@@ -10,11 +10,11 @@ public class NotificationData implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer id;
-    private String notifiableType;
+    private String notifiable_type;
     private String title;
     private String body;
     private Boolean opened;
-    private String createdAt;
+    private String created_at;
 
     public Integer getId() {
         return id;
@@ -25,11 +25,11 @@ public class NotificationData implements Serializable {
     }
 
     public String getNotifiableType() {
-        return notifiableType;
+        return notifiable_type;
     }
 
     public void setNotifiableType(String notifiableType) {
-        this.notifiableType = notifiableType;
+        this.notifiable_type = notifiableType;
     }
 
     public String getTitle() {
@@ -57,10 +57,10 @@ public class NotificationData implements Serializable {
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 }

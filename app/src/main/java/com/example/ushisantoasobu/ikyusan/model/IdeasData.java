@@ -11,4 +11,12 @@ public class IdeasData implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private List<IdeaData> ideas;
+
+    public List<IdeaData> getIdeas() {
+        return ideas;
+    }
+
+    public void setIdeas(List<IdeaData> ideas) {
+        this.ideas = ideas;
+    }
 }

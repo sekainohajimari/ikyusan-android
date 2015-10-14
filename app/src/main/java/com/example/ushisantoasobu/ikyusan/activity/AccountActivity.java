@@ -4,15 +4,59 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.ushisantoasobu.ikyusan.IkyusanService;
 import com.example.ushisantoasobu.ikyusan.R;
+import com.example.ushisantoasobu.ikyusan.model.InfoProfileData;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import retrofit.converter.GsonConverter;
 
 public class AccountActivity extends Activity {
+
+    @InjectView(R.id.idTextView)
+    TextView mTextView;
+
+    @InjectView(R.id.nicknameEditText)
+    EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        ButterKnife.inject(this);
+
+        //api
+        Gson gson = new GsonBuilder().create();
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint("http://ikyusan.sekahama.club")
+                .setConverter(new GsonConverter(gson))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build();
+        IkyusanService service = restAdapter.create(IkyusanService.class);
+        service.infoProfile(new Callback<InfoProfileData>() {
+            @Override
+            public void success(InfoProfileData data, Response response) {
+                mTextView.setText(data.getProfile().getDisplayId());
+                mEditText.setText(data.getProfile().getDisplayName());
+            }
+
+            @Override
+            public void failure(RetrofitError retrofitError) {
+                //
+            }
+        });
     }
 
     @Override
@@ -35,5 +79,29 @@ public class AccountActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @OnClick(R.id.button)
+    void buttonClickd() {
+        //api
+        Gson gson = new GsonBuilder().create();
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint("http://ikyusan.sekahama.club")
+                .setConverter(new GsonConverter(gson))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build();
+        IkyusanService service = restAdapter.create(IkyusanService.class);
+        service.updateProfile("たこまん", "0", new Callback<InfoProfileData>() {
+            @Override
+            public void success(InfoProfileData profile, Response response) {
+                mTextView.setText(profile.getProfile().getDisplayId());
+                mEditText.setText(profile.getProfile().getDisplayName());
+            }
+
+            @Override
+            public void failure(RetrofitError retrofitError) {
+                //
+            }
+        });
     }
 }

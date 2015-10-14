@@ -9,49 +9,49 @@ public class PageData implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private Integer current_page;
+    private Integer next_page;
+    private Integer prev_page;
+    private Integer total_pages;
+    private Integer total_count;
+
     public Integer getCurrentPage() {
-        return currentPage;
+        return current_page;
     }
 
     public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+        this.current_page = currentPage;
     }
 
     public Integer getNextPage() {
-        return nextPage;
+        return next_page;
     }
 
     public void setNextPage(Integer nextPage) {
-        this.nextPage = nextPage;
+        this.next_page = nextPage;
     }
 
     public Integer getPrevPage() {
-        return prevPage;
+        return prev_page;
     }
 
     public void setPrevPage(Integer prevPage) {
-        this.prevPage = prevPage;
+        this.prev_page = prevPage;
     }
 
     public Integer getTotalPages() {
-        return totalPages;
+        return total_pages;
     }
 
     public void setTotalPages(Integer totalPages) {
-        this.totalPages = totalPages;
+        this.total_pages = totalPages;
     }
 
     public Integer getTotalCount() {
-        return totalCount;
+        return total_count;
     }
 
     public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+        this.total_count = totalCount;
     }
-
-    private Integer currentPage;
-    private Integer nextPage;
-    private Integer prevPage;
-    private Integer totalPages;
-    private Integer totalCount;
 }

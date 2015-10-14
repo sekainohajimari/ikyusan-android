@@ -41,6 +41,7 @@ public class GroupListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_group);
 
         ButterKnife.inject(this);
@@ -111,6 +112,19 @@ public class GroupListActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+//    private void setupActionBar() {
+//        ActionBar actionBar = getActionBar();
+//
+//        // 通常表示されるタイトルを非表示にする。
+//        actionBar.setDisplayShowTitleEnabled(false);
+//
+//        // 独自のビューを表示するように設定。
+//        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM, ActionBar.DISPLAY_SHOW_CUSTOM);
+//
+//        // 独自のビューを指定。 (ここではレイアウトリソースの ID を指定しているが、View オブジェクトを渡すこともできる。)
+//        actionBar.setCustomView(R.layout.header_group_list);
+//    }
 
     private void startTopicListActivity(GroupData group) {
         Intent intent = new Intent(this, TopicListActivity.class);

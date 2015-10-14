@@ -9,13 +9,13 @@ public class ColorData implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int colorColdeId;
+    private int color_colde_id;
 
     public int getColorColdeId() {
-        return colorColdeId;
+        return color_colde_id;
     }
 
     public void setColorColdeId(int colorColdeId) {
-        this.colorColdeId = colorColdeId;
+        this.color_colde_id = colorColdeId;
     }
 }

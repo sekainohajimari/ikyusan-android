@@ -59,7 +59,7 @@ public class TopicListActivity extends Activity {
             //リスト項目クリック時の処理
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-                startIdeaListActivity();
+                startIdeaListActivity(list.get(position));
             }
 
         });
@@ -111,8 +111,10 @@ public class TopicListActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void startIdeaListActivity() {
+    private void startIdeaListActivity(TopicData topic) {
         Intent intent = new Intent(this, IdeaListActivity.class);
+        intent.putExtra("group", group);
+        intent.putExtra("topic", topic);
         startActivityForResult(intent, 0); //2つめの引数はactivityを識別するためのものらしい
     }
 
